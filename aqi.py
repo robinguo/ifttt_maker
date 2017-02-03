@@ -3,7 +3,7 @@
 import urllib2
 import json
 
-req = urllib2.Request('https://waqi.info/api/feed/@1451/now.json')
+req = urllib2.Request('https://api.waqi.info/api/feed/@1451/obs.en.json')
 req.add_header('user-agent', 'Mozilla/5.0')
 req.add_header('origin', 'http://aqicn.org')
 req.add_header('referer', 'http://aqicn.org/city/all/')
