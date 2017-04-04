@@ -3,11 +3,8 @@
 import urllib2
 import json
 
-req = urllib2.Request('https://api.waqi.info/api/feed/@1451/obs.en.json')
-req.add_header('user-agent', 'Mozilla/5.0')
-req.add_header('origin', 'http://aqicn.org')
-req.add_header('referer', 'http://aqicn.org/city/all/')
+req = urllib2.Request('https://api.waqi.info/feed/beijing/?token=2c22270e805a1277556ece6875e209383ad86a75')
 data = urllib2.urlopen(req).read()
 result = json.loads(data)
 # print result
-urllib2.urlopen('https://maker.ifttt.com/trigger/aqi_beijing/with/key/dAQW2GcyRqhfLeXHFs1Tn5?value1=' + str(result['rxs']['obs'][0]['msg']['aqi']))
+urllib2.urlopen('https://maker.ifttt.com/trigger/aqi_beijing/with/key/dAQW2GcyRqhfLeXHFs1Tn5?value1=' + str(result['data']['aqi']))
